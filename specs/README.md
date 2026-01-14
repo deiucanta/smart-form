@@ -2,4 +2,4 @@
 
 | Spec | Description |
 |------|-------------|
-| — | No specs yet |
+| [tech-stack](./tech-stack.md) | React, Vite, TypeScript, Tailwind, Shadcn |
