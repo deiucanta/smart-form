@@ -65,7 +65,7 @@ export type CustomDef = {
 export interface FormDef<Fields = Record<string, unknown>> {
   fields: FieldDef[];
   fieldMap: Record<string, FieldDef>;
-  toZod: () => z.ZodObject<Record<string, z.ZodType>>;
+  toZod: () => z.ZodObject<{ [K in keyof Fields]: z.ZodType<Fields[K]> }>;
   _fieldsType?: Fields; // phantom type for inference
 }
 
@@ -123,14 +123,16 @@ class FormBuilder<Fields = EmptyFields> implements FormDef<Fields> {
     if (!this._fieldMap) {
       this._fieldMap = {};
       for (const field of this._fields) {
-        this._fieldMap[field.name] = field;
+        if (field.type !== "custom") {
+          this._fieldMap[field.name] = field;
+        }
       }
     }
     return this._fieldMap;
   }
 
-  toZod(): z.ZodObject<Record<string, z.ZodType>> {
-    return this._buildZodSchema(this._fields);
+  toZod() {
+    return this._buildZodSchema(this._fields) as z.ZodObject<{ [K in keyof Fields]: z.ZodType<Fields[K]> }>;
   }
 
   private _clone<NewFields>(): FormBuilder<NewFields> {
