@@ -11,7 +11,7 @@
   "dependencies": {
     "@mantine/core": "^7.17.5",
     "@mantine/hooks": "^7.17.5",
-    "@smart-form/react-mantine": "workspace:*",
+    "@smart-form/react-mantine": "^0.0.1",
     "@tabler/icons-react": "^3.31.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
