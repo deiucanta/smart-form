@@ -11,23 +11,40 @@ npx shadcn@latest add https://deiucanta.github.io/smart-form/smart-form.json
 ```
 
 This will automatically:
-- Install `@smart-form/core` and `@smart-form/react` from npm
+- Install `@smart-form/react` from npm
 - Install required shadcn components (input, label, select, button, textarea)
 - Copy the smart-form component to your project
 
 ### Manual Installation
 
 ```bash
-npm install @smart-form/core @smart-form/react
+npm install @smart-form/react
+# or
+yarn add @smart-form/react
+# or
+pnpm add @smart-form/react
+# or
+bun add @smart-form/react
 ```
 
 Then create your own component registry (see Custom Components below).
 
+### Validation Library
+
+```bash
+npm install zod
+# or
+yarn add zod
+# or
+pnpm add zod
+# or
+bun add zod
+```
+
 ## Quick Start
 
 ```tsx
-import { form, type InferFormData } from '@smart-form/core'
-import { SmartForm } from '@smart-form/react'
+import { form, SmartForm, type InferFormData } from '@smart-form/react'
 import { shadcnComponents } from '@/components/ui/smart-form'
 import { z } from 'zod'
 
@@ -116,7 +133,7 @@ form()
 Provide your own UI components:
 
 ```tsx
-import type { ComponentRegistry } from '@smart-form/core'
+import type { ComponentRegistry } from '@smart-form/react'
 
 const myComponents: ComponentRegistry = {
   TextField: ({ name, value, label, error, onChange, onBlur }) => (
@@ -139,8 +156,8 @@ const myComponents: ComponentRegistry = {
 
 | Package | Description |
 |---------|-------------|
-| `@smart-form/core` | Form builder, store, types (framework-agnostic) |
-| `@smart-form/react` | React binding |
+| `@smart-form/react` | React binding (includes core) |
+| `@smart-form/core` | Form builder, store, types (framework-agnostic, installed automatically) |
 
 ## License
 
