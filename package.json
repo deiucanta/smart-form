@@ -3,11 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "pnpm --filter demo dev",
+    "dev": "pnpm --filter react-demo dev",
     "build": "pnpm -r build",
     "test": "pnpm -r test",
     "lint": "pnpm -r lint",
-    "registry:build": "shadcn build apps/demo/registry.json -o public"
+    "registry:build": "shadcn build apps/react-demo/registry.json -o public"
   },
   "devDependencies": {
     "shadcn": "^2.3.0",

@@ -12,7 +12,7 @@
       "registryDependencies": ["input", "label", "select", "button", "textarea"],
       "files": [
         {
-          "path": "apps/demo/src/registry/smart-form.tsx",
+          "path": "apps/react-demo/src/registry/smart-form.tsx",
           "type": "registry:component",
           "target": "components/ui/smart-form.tsx"
         }
