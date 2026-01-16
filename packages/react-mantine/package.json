@@ -1,6 +1,6 @@
 {
   "name": "@smart-form/react-mantine",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Mantine components for @smart-form/react",
   "type": "module",
   "main": "./dist/index.js",
@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/deiucanta/smart-form#readme",
   "dependencies": {
-    "@smart-form/react": "workspace:*"
+    "@smart-form/react": "^0.0.1"
   },
   "peerDependencies": {
     "react": ">=18",
