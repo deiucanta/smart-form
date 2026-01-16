@@ -2,6 +2,10 @@
   "name": "smart-form",
   "private": true,
   "type": "module",
+  "scripts": {
+    "build": "pnpm -r build",
+    "release": "pnpm build && pnpm -r publish --access public"
+  },
   "devDependencies": {
     "typescript": "~5.9.3"
   }

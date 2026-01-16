@@ -1,6 +1,6 @@
 {
   "name": "@smart-form/core",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Framework-agnostic form builder with type-safe schema validation",
   "type": "module",
   "main": "./dist/index.js",

@@ -1,6 +1,6 @@
 {
   "name": "@smart-form/vue",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Vue 3 binding for @smart-form/core",
   "type": "module",
   "main": "./dist/index.js",
@@ -29,7 +29,7 @@
   "homepage": "https://github.com/deiucanta/smart-form#readme",
   "dependencies": {
     "@nanostores/vue": "^1.0.1",
-    "@smart-form/core": "^0.0.1"
+    "@smart-form/core": "workspace:*"
   },
   "peerDependencies": {
     "vue": ">=3.3"
