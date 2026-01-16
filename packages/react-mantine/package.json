@@ -1,0 +1,49 @@
+{
+  "name": "@smart-form/react-mantine",
+  "version": "0.0.1",
+  "description": "Mantine components for @smart-form/react",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "vite build"
+  },
+  "keywords": ["form", "forms", "react", "mantine", "typescript"],
+  "author": "Andrei Canta",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deiucanta/smart-form.git",
+    "directory": "packages/react-mantine"
+  },
+  "bugs": {
+    "url": "https://github.com/deiucanta/smart-form/issues"
+  },
+  "homepage": "https://github.com/deiucanta/smart-form#readme",
+  "dependencies": {
+    "@smart-form/react": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "@mantine/core": ">=7",
+    "@mantine/hooks": ">=7",
+    "@tabler/icons-react": ">=3"
+  },
+  "devDependencies": {
+    "@mantine/core": "^7.17.5",
+    "@mantine/hooks": "^7.17.5",
+    "@tabler/icons-react": "^3.31.0",
+    "@types/react": "^19.2.5",
+    "react": "^19.2.0",
+    "typescript": "~5.9.3",
+    "vite": "^6.3.5",
+    "vite-plugin-dts": "^4.5.4"
+  }
+}
