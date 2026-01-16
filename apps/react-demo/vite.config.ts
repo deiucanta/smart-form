@@ -4,7 +4,7 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  base: "/react/",
+  base: "/smart-form/react/",
   build: {
     outDir: "../../public/react",
     emptyOutDir: true,
