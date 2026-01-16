@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { form, type InferFormData } from "@smart-form/core";
 import { SmartForm } from "@smart-form/react";
-import { shadcnComponents } from "@smart-form/ui-shadcn";
+import { shadcnComponents } from "@/registry/smart-form";
 
 // Form definition
 const myForm = form()
