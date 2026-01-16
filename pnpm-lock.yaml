@@ -76,8 +76,8 @@ importers:
         specifier: ^7.17.5
         version: 7.17.8(react@19.2.3)
       '@smart-form/react-mantine':
-        specifier: workspace:*
-        version: link:../../packages/react-mantine
+        specifier: ^0.0.1
+        version: 0.0.1(@mantine/core@7.17.8(@mantine/hooks@7.17.8(react@19.2.3))(@types/react@19.2.8)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@mantine/hooks@7.17.8(react@19.2.3))(@tabler/icons-react@3.36.1(react@19.2.3))(nanostores@1.1.0)(react@19.2.3)
       '@tabler/icons-react':
         specifier: ^3.31.0
         version: 3.36.1(react@19.2.3)
@@ -1779,6 +1779,14 @@ packages:
 
   '@smart-form/core@0.0.1':
     resolution: {integrity: sha512-WbLVULe+zpWh2Blb5vGfVM7FnB/eUB6dKc+ijdJwTZFkkW/MMOrTIyxqq8MgC+qlOIVTJL9dl9/1H7xzBhGwLg==}
+
+  '@smart-form/react-mantine@0.0.1':
+    resolution: {integrity: sha512-KbKSMahUtEvXe0Z+kgj4A0s2o/RMuqJ9jgvqzeHKCwK3S5NZqBtVi55rWgTqFYCeZ5yiatQhgymgBZ0a2nGnyQ==}
+    peerDependencies:
+      '@mantine/core': '>=7'
+      '@mantine/hooks': '>=7'
+      '@tabler/icons-react': '>=3'
+      react: '>=18'
 
   '@smart-form/react@0.0.1':
     resolution: {integrity: sha512-EvAXOOv5R94HlOrnMxUSill94QL2A+tPMyMbzuUzBXdk3RZLoJ4zbmFzdlTKZMJ59yQqG7AGs4w10D1Ba/ANWg==}
@@ -5097,6 +5105,16 @@ snapshots:
     dependencies:
       nanostores: 1.1.0
       zod: 4.3.5
+
+  '@smart-form/react-mantine@0.0.1(@mantine/core@7.17.8(@mantine/hooks@7.17.8(react@19.2.3))(@types/react@19.2.8)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@mantine/hooks@7.17.8(react@19.2.3))(@tabler/icons-react@3.36.1(react@19.2.3))(nanostores@1.1.0)(react@19.2.3)':
+    dependencies:
+      '@mantine/core': 7.17.8(@mantine/hooks@7.17.8(react@19.2.3))(@types/react@19.2.8)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@mantine/hooks': 7.17.8(react@19.2.3)
+      '@smart-form/react': 0.0.1(nanostores@1.1.0)(react@19.2.3)
+      '@tabler/icons-react': 3.36.1(react@19.2.3)
+      react: 19.2.3
+    transitivePeerDependencies:
+      - nanostores
 
   '@smart-form/react@0.0.1(nanostores@1.1.0)(react@19.2.3)':
     dependencies:
