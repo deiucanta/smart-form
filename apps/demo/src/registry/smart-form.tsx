@@ -1,7 +1,6 @@
+"use client";
+
 import * as React from "react";
-import * as LabelPrimitive from "@radix-ui/react-label";
-import { Slot } from "@radix-ui/react-slot";
-import { cva, type VariantProps } from "class-variance-authority";
 import { ChevronDown, ChevronUp, Plus, Trash2 } from "lucide-react";
 import type {
   ComponentRegistry,
@@ -14,96 +13,19 @@ import type {
   FieldWrapperProps,
   SpanValue,
 } from "@smart-form/core";
-import { cn } from "./utils";
 
-// Button variants
-const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]",
-  {
-    variants: {
-      variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        destructive:
-          "bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20",
-        outline:
-          "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
-      },
-      size: {
-        default: "h-9 px-4 py-2",
-        sm: "h-8 rounded-md gap-1.5 px-3",
-        lg: "h-10 rounded-md px-6",
-        icon: "size-9",
-      },
-    },
-    defaultVariants: {
-      variant: "default",
-      size: "default",
-    },
-  }
-);
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
-interface ButtonProps
-  extends React.ComponentProps<"button">,
-    VariantProps<typeof buttonVariants> {
-  asChild?: boolean;
-}
-
-function Button({
-  className,
-  variant = "default",
-  size = "default",
-  asChild = false,
-  ...props
-}: ButtonProps) {
-  const Comp = asChild ? Slot : "button";
-  return (
-    <Comp
-      className={cn(buttonVariants({ variant, size, className }))}
-      {...props}
-    />
-  );
-}
-
-// Input component
-function Input({
-  className,
-  type,
-  ...props
-}: React.ComponentProps<"input">) {
-  return (
-    <input
-      type={type}
-      className={cn(
-        "placeholder:text-muted-foreground border-input h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
-        "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]",
-        "aria-invalid:ring-destructive/20 aria-invalid:border-destructive",
-        className
-      )}
-      {...props}
-    />
-  );
-}
-
-// Label component
-function Label({
-  className,
-  ...props
-}: React.ComponentProps<typeof LabelPrimitive.Root>) {
-  return (
-    <LabelPrimitive.Root
-      className={cn(
-        "flex items-center gap-2 text-sm leading-none font-medium select-none",
-        className
-      )}
-      {...props}
-    />
-  );
-}
-
-// Span class helper
 function getSpanClass(span?: SpanValue): string {
   const spanClasses: Record<SpanValue, string> = {
     1: "col-span-1",
@@ -122,7 +44,6 @@ function getSpanClass(span?: SpanValue): string {
   return spanClasses[span ?? 12];
 }
 
-// Component Registry Implementation
 export const shadcnComponents: ComponentRegistry = {
   TextField: ({
     name,
@@ -174,7 +95,7 @@ export const shadcnComponents: ComponentRegistry = {
   }: TextareaFieldProps) => (
     <div className="space-y-2">
       {label && <Label htmlFor={name}>{label}</Label>}
-      <textarea
+      <Textarea
         id={name}
         name={name}
         value={value as string}
@@ -182,12 +103,6 @@ export const shadcnComponents: ComponentRegistry = {
         onBlur={onBlur}
         rows={rows}
         placeholder={placeholder}
-        className={cn(
-          "placeholder:text-muted-foreground border-input min-h-[80px] w-full rounded-md border bg-transparent px-3 py-2 text-sm shadow-xs outline-none",
-          "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]",
-          "aria-invalid:ring-destructive/20 aria-invalid:border-destructive",
-          "disabled:cursor-not-allowed disabled:opacity-50"
-        )}
         aria-invalid={!!error}
       />
       {error && <p className="text-sm text-destructive">{error}</p>}
@@ -206,27 +121,26 @@ export const shadcnComponents: ComponentRegistry = {
   }: SelectFieldProps) => (
     <div className="space-y-2">
       {label && <Label htmlFor={name}>{label}</Label>}
-      <select
-        id={name}
-        name={name}
+      <Select
         value={value as string}
-        onChange={(e) => onChange(e.target.value)}
-        onBlur={onBlur}
-        className={cn(
-          "border-input h-9 w-full rounded-md border bg-transparent px-3 py-1 text-sm shadow-xs outline-none",
-          "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]",
-          "aria-invalid:ring-destructive/20 aria-invalid:border-destructive",
-          "disabled:cursor-not-allowed disabled:opacity-50"
-        )}
-        aria-invalid={!!error}
+        onValueChange={onChange}
       >
-        {placeholder && <option value="">{placeholder}</option>}
-        {options.map((opt) => (
-          <option key={opt.value} value={opt.value}>
-            {opt.label}
-          </option>
-        ))}
-      </select>
+        <SelectTrigger
+          id={name}
+          className="w-full"
+          aria-invalid={!!error}
+          onBlur={onBlur}
+        >
+          <SelectValue placeholder={placeholder} />
+        </SelectTrigger>
+        <SelectContent>
+          {options.map((opt) => (
+            <SelectItem key={opt.value} value={opt.value}>
+              {opt.label}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
       {error && <p className="text-sm text-destructive">{error}</p>}
     </div>
   ),

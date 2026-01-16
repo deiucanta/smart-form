@@ -4,24 +4,31 @@ A framework-agnostic form library with type-safe schema validation. Currently su
 
 ## Installation
 
-```bash
-npm install @smart-form/core @smart-form/react @smart-form/ui-shadcn
-```
-
-### Peer Dependencies
+### Using shadcn CLI (Recommended)
 
 ```bash
-npm install react zod
+npx shadcn@latest add https://deiucanta.github.io/smart-form/smart-form.json
 ```
 
-For `@smart-form/ui-shadcn`, you also need Tailwind CSS v4 configured.
+This will automatically:
+- Install `@smart-form/core` and `@smart-form/react` from npm
+- Install required shadcn components (input, label, select, button, textarea)
+- Copy the smart-form component to your project
+
+### Manual Installation
+
+```bash
+npm install @smart-form/core @smart-form/react
+```
+
+Then create your own component registry (see Custom Components below).
 
 ## Quick Start
 
 ```tsx
 import { form, type InferFormData } from '@smart-form/core'
 import { SmartForm } from '@smart-form/react'
-import { shadcnComponents } from '@smart-form/ui-shadcn'
+import { shadcnComponents } from '@/components/ui/smart-form'
 import { z } from 'zod'
 
 const myForm = form()
@@ -58,31 +65,6 @@ function App() {
       onSubmit={handleSubmit}
     />
   )
-}
-```
-
-## Tailwind CSS Setup
-
-Add the ui-shadcn source to your CSS:
-
-```css
-@import "tailwindcss";
-@source "node_modules/@smart-form/ui-shadcn/dist";
-```
-
-Add Shadcn theme variables:
-
-```css
-:root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
 }
 ```
 
@@ -159,7 +141,6 @@ const myComponents: ComponentRegistry = {
 |---------|-------------|
 | `@smart-form/core` | Form builder, store, types (framework-agnostic) |
 | `@smart-form/react` | React binding |
-| `@smart-form/ui-shadcn` | Shadcn/Tailwind components |
 
 ## License
 

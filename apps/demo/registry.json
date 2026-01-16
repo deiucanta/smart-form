@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "smart-form",
+  "homepage": "https://github.com/andrei-sibirov/smart-form",
+  "items": [
+    {
+      "name": "smart-form",
+      "type": "registry:component",
+      "title": "Smart Form",
+      "description": "Type-safe form builder with shadcn components",
+      "dependencies": ["@smart-form/core", "@smart-form/react", "lucide-react"],
+      "registryDependencies": ["input", "label", "select", "button", "textarea"],
+      "files": [
+        {
+          "path": "apps/demo/src/registry/smart-form.tsx",
+          "type": "registry:component",
+          "target": "components/ui/smart-form.tsx"
+        }
+      ]
+    }
+  ]
+}
