@@ -2,45 +2,17 @@
 
 A framework-agnostic form library with type-safe schema validation. Supports React and Vue 3.
 
-**Demos:** [React](https://deiucanta.github.io/smart-form/react/) | [Vue](https://deiucanta.github.io/smart-form/vue/)
-
 ## Installation
 
-### Using shadcn CLI (Recommended)
-
 ```bash
-npx shadcn@latest add https://deiucanta.github.io/smart-form/smart-form.json
-```
+# React
+npm install @smart-form/react zod
 
-This will automatically:
-- Install `@smart-form/react` from npm
-- Install required shadcn components (input, label, select, button, textarea)
-- Copy the smart-form component to your project
+# Vue 3
+npm install @smart-form/vue zod
 
-### Manual Installation
-
-```bash
-npm install @smart-form/react
-# or
-yarn add @smart-form/react
-# or
-pnpm add @smart-form/react
-# or
-bun add @smart-form/react
-```
-
-Then create your own component registry (see Custom Components below).
-
-### Validation Library
-
-```bash
-npm install zod
-# or
-yarn add zod
-# or
-pnpm add zod
-# or
-bun add zod
+# Vue 3 + Vuetify (includes pre-built components)
+npm install @smart-form/vue-vuetify zod
 ```
 
 ## Quick Start
@@ -158,9 +130,17 @@ const myComponents: ComponentRegistry = {
 
 | Package | Description |
 |---------|-------------|
+| [`@smart-form/core`](packages/core) | Framework-agnostic core (form builder, store, types) |
 | [`@smart-form/react`](packages/react) | React binding |
 | [`@smart-form/vue`](packages/vue) | Vue 3 binding |
-| `@smart-form/core` | Form builder, store, types (framework-agnostic, installed automatically) |
+| [`@smart-form/vue-vuetify`](packages/vue-vuetify) | Vue 3 + Vuetify pre-built components |
+
+## Examples
+
+| Example | Description |
+|---------|-------------|
+| [`react-shadcn`](examples/react-shadcn) | React with shadcn/ui components |
+| [`vue-vuetify`](examples/vue-vuetify) | Vue 3 with Vuetify components |
 
 ## License
 

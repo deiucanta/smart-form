@@ -2,16 +2,7 @@
   "name": "smart-form",
   "private": true,
   "type": "module",
-  "scripts": {
-    "dev:react": "pnpm --filter react-demo dev",
-    "dev:vue": "pnpm --filter vue-demo dev",
-    "build": "pnpm -r build",
-    "test": "pnpm -r test",
-    "lint": "pnpm -r lint",
-    "registry:build": "shadcn build apps/react-demo/registry.json -o public"
-  },
   "devDependencies": {
-    "shadcn": "^2.3.0",
     "typescript": "~5.9.3"
   }
 }
