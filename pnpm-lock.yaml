@@ -15,7 +15,7 @@ importers:
         specifier: ~5.9.3
         version: 5.9.3
 
-  apps/demo:
+  apps/react-demo:
     dependencies:
       '@radix-ui/react-label':
         specifier: ^2.1.7
