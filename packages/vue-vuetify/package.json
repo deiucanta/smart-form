@@ -1,0 +1,44 @@
+{
+  "name": "@smart-form/vue-vuetify",
+  "version": "0.0.1",
+  "description": "Vuetify components for @smart-form/vue",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "vite build"
+  },
+  "keywords": ["form", "forms", "vue", "vuetify", "typescript"],
+  "author": "Andrei Canta",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deiucanta/smart-form.git",
+    "directory": "packages/vue-vuetify"
+  },
+  "bugs": {
+    "url": "https://github.com/deiucanta/smart-form/issues"
+  },
+  "homepage": "https://github.com/deiucanta/smart-form#readme",
+  "dependencies": {
+    "@smart-form/vue": "workspace:*"
+  },
+  "peerDependencies": {
+    "vue": ">=3",
+    "vuetify": ">=3"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.3",
+    "vite": "^6.3.5",
+    "vite-plugin-dts": "^4.5.4",
+    "vue": "^3.5.17",
+    "vuetify": "^3.8.7"
+  }
+}
