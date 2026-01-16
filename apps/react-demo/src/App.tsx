@@ -1,7 +1,6 @@
 import { z } from "zod";
 import { form, type InferFormData } from "@smart-form/core";
-import { SmartForm } from "@smart-form/react";
-import { shadcnComponents } from "@/registry/smart-form";
+import { SmartForm } from "@/registry/smart-form";
 
 // Form definition
 const myForm = form()
@@ -65,7 +64,6 @@ function App() {
         </p>
         <SmartForm
           form={myForm}
-          components={shadcnComponents}
           initialValues={{
             firstName: "Andrei",
           }}

@@ -2,6 +2,8 @@
 
 A framework-agnostic form library with type-safe schema validation. Supports React and Vue 3.
 
+**Demos:** [React](https://deiucanta.github.io/smart-form/react/) | [Vue](https://deiucanta.github.io/smart-form/vue/)
+
 ## Installation
 
 ### Using shadcn CLI (Recommended)

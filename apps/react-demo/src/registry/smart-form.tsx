@@ -2,8 +2,14 @@
 
 import * as React from "react";
 import { ChevronDown, ChevronUp, Plus, Trash2 } from "lucide-react";
+import {
+  SmartForm as BaseSmartForm,
+  type SmartFormProps as BaseSmartFormProps,
+} from "@smart-form/react";
 import type {
   ComponentRegistry,
+  FormDef,
+  InferFormData,
   TextFieldProps,
   TextareaFieldProps,
   SelectFieldProps,
@@ -237,3 +243,22 @@ export const shadcnComponents: ComponentRegistry = {
     <div className={getSpanClass(span)}>{children as React.ReactNode}</div>
   ),
 };
+
+// Pre-bound SmartForm component with shadcn/ui
+export interface SmartFormProps<T extends FormDef>
+  extends Omit<BaseSmartFormProps<T>, "components"> {}
+
+export function SmartForm<T extends FormDef>({
+  form,
+  initialValues,
+  onSubmit,
+}: SmartFormProps<T>) {
+  return (
+    <BaseSmartForm
+      form={form}
+      components={shadcnComponents}
+      initialValues={initialValues}
+      onSubmit={onSubmit}
+    />
+  );
+}
