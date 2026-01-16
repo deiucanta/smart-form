@@ -1,6 +1,6 @@
 # Smart Form
 
-A framework-agnostic form library with type-safe schema validation. Currently supports React with Shadcn UI components.
+A framework-agnostic form library with type-safe schema validation. Supports React and Vue 3.
 
 ## Installation
 
@@ -156,7 +156,8 @@ const myComponents: ComponentRegistry = {
 
 | Package | Description |
 |---------|-------------|
-| `@smart-form/react` | React binding (includes core) |
+| [`@smart-form/react`](packages/react) | React binding |
+| [`@smart-form/vue`](packages/vue) | Vue 3 binding |
 | `@smart-form/core` | Form builder, store, types (framework-agnostic, installed automatically) |
 
 ## License
