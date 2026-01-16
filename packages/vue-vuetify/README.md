@@ -2,7 +2,7 @@
 
 Vuetify 3 components for Smart Form - a type-safe form library with Zod validation.
 
-**Demo:** [https://deiucanta.github.io/smart-form/vue/](https://deiucanta.github.io/smart-form/vue/)
+**Demo:** [https://smart-form-docs.vercel.app/docs/examples/vue-vuetify](https://smart-form-docs.vercel.app/docs/examples/vue-vuetify)
 
 ## Installation
 

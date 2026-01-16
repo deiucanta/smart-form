@@ -2,7 +2,7 @@
 
 Mantine components for Smart Form - a type-safe form library with Zod validation.
 
-**Demo:** [https://deiucanta.github.io/smart-form/react-mantine/](https://deiucanta.github.io/smart-form/react-mantine/)
+**Demo:** [https://smart-form-docs.vercel.app/docs/examples/react-mantine](https://smart-form-docs.vercel.app/docs/examples/react-mantine)
 
 ## Installation
 

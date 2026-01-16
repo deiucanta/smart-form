@@ -2,7 +2,7 @@
 
 React binding for Smart Form - a type-safe form library with Zod validation.
 
-**Demo:** [https://deiucanta.github.io/smart-form/react/](https://deiucanta.github.io/smart-form/react/)
+**Demo:** [https://smart-form-docs.vercel.app/docs/examples/react](https://smart-form-docs.vercel.app/docs/examples/react)
 
 ## Installation
 
