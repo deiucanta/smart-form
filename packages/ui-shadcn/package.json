@@ -1,6 +1,7 @@
 {
   "name": "@smart-form/ui-shadcn",
   "version": "0.0.1",
+  "description": "Shadcn/Tailwind UI components for @smart-form/react",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -14,10 +15,22 @@
   "scripts": {
     "build": "tsc"
   },
+  "keywords": ["form", "forms", "react", "shadcn", "tailwind", "ui", "components"],
+  "author": "Andrei Canta",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deiucanta/smart-form.git",
+    "directory": "packages/ui-shadcn"
+  },
+  "bugs": {
+    "url": "https://github.com/deiucanta/smart-form/issues"
+  },
+  "homepage": "https://github.com/deiucanta/smart-form#readme",
   "dependencies": {
     "@radix-ui/react-label": "^2.1.8",
     "@radix-ui/react-slot": "^1.2.4",
-    "@smart-form/core": "workspace:*",
+    "@smart-form/core": "^0.0.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.562.0",

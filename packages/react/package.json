@@ -1,6 +1,7 @@
 {
   "name": "@smart-form/react",
   "version": "0.0.1",
+  "description": "React binding for @smart-form/core",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -16,9 +17,21 @@
     "test": "vitest run",
     "test:watch": "vitest"
   },
+  "keywords": ["form", "forms", "react", "hooks", "typescript"],
+  "author": "Andrei Canta",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deiucanta/smart-form.git",
+    "directory": "packages/react"
+  },
+  "bugs": {
+    "url": "https://github.com/deiucanta/smart-form/issues"
+  },
+  "homepage": "https://github.com/deiucanta/smart-form#readme",
   "dependencies": {
     "@nanostores/react": "^1.0.0",
-    "@smart-form/core": "workspace:*"
+    "@smart-form/core": "^0.0.1"
   },
   "peerDependencies": {
     "react": ">=18"
