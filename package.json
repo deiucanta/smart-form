@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "pnpm --filter demo dev",
+    "dev:react": "pnpm --filter demo dev",
+    "dev:vue": "pnpm --filter vue-demo dev",
     "build": "pnpm -r build",
     "test": "pnpm -r test",
     "lint": "pnpm -r lint",
