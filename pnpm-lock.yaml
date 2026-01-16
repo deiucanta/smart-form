@@ -119,11 +119,11 @@ importers:
         specifier: ^1.2.3
         version: 1.2.4(@types/react@19.2.8)(react@19.2.3)
       '@smart-form/core':
-        specifier: workspace:*
-        version: link:../../packages/core
+        specifier: ^0.0.1
+        version: 0.0.1
       '@smart-form/react':
-        specifier: workspace:*
-        version: link:../../packages/react
+        specifier: ^0.0.1
+        version: 0.0.1(nanostores@1.1.0)(react@19.2.3)
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -174,8 +174,8 @@ importers:
         specifier: ^7.4.47
         version: 7.4.47
       '@smart-form/vue':
-        specifier: workspace:*
-        version: link:../../packages/vue
+        specifier: ^0.0.1
+        version: 0.0.1(nanostores@1.1.0)(vue@3.5.26(typescript@5.9.3))
       vue:
         specifier: ^3.5.17
         version: 3.5.26(typescript@5.9.3)
@@ -1779,6 +1779,16 @@ packages:
 
   '@smart-form/core@0.0.1':
     resolution: {integrity: sha512-WbLVULe+zpWh2Blb5vGfVM7FnB/eUB6dKc+ijdJwTZFkkW/MMOrTIyxqq8MgC+qlOIVTJL9dl9/1H7xzBhGwLg==}
+
+  '@smart-form/react@0.0.1':
+    resolution: {integrity: sha512-EvAXOOv5R94HlOrnMxUSill94QL2A+tPMyMbzuUzBXdk3RZLoJ4zbmFzdlTKZMJ59yQqG7AGs4w10D1Ba/ANWg==}
+    peerDependencies:
+      react: '>=18'
+
+  '@smart-form/vue@0.0.1':
+    resolution: {integrity: sha512-n2Yx40dVaoR4yLk4VfKhDmX+MUdhhOJKnns8SloHnGfGVKQXaad5REPnSqvCKzywSVpja9+7ghDTGfN74Eif2Q==}
+    peerDependencies:
+      vue: '>=3.3'
 
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
@@ -5087,6 +5097,24 @@ snapshots:
     dependencies:
       nanostores: 1.1.0
       zod: 4.3.5
+
+  '@smart-form/react@0.0.1(nanostores@1.1.0)(react@19.2.3)':
+    dependencies:
+      '@nanostores/react': 1.0.0(nanostores@1.1.0)(react@19.2.3)
+      '@smart-form/core': 0.0.1
+      react: 19.2.3
+    transitivePeerDependencies:
+      - nanostores
+
+  '@smart-form/vue@0.0.1(nanostores@1.1.0)(vue@3.5.26(typescript@5.9.3))':
+    dependencies:
+      '@nanostores/vue': 1.0.1(nanostores@1.1.0)(vue@3.5.26(typescript@5.9.3))
+      '@smart-form/core': 0.0.1
+      vue: 3.5.26(typescript@5.9.3)
+    transitivePeerDependencies:
+      - '@nanostores/logger'
+      - '@vue/devtools-api'
+      - nanostores
 
   '@standard-schema/spec@1.1.0': {}
 
